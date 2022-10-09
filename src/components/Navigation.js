@@ -26,7 +26,7 @@ const Navigation = () => {
             </div>
 
 
-            <div className={`p-3 h-full space-y-2 w-60 absolute ${ profile ? 'right-0' : 'right-[-500px]' } duration-500 top-0 bg-white dark:text-gray-100`}>
+            <div className={`p-3 h-full space-y-2 w-60 absolute ${ profile ? 'right-0' : 'right-[-500px] hidden'} scroll duration-500 top-0 bg-white dark:text-gray-100`}>
                     <div className="flex items-center p-2 space-x-4">
                         <img onClick={()=> setProfile(!profile)} src="https://source.unsplash.com/100x100/?portrait" alt="" className="w-12 cursor-pointer h-12 rounded-full dark:bg-gray-500" />
                         <div>
