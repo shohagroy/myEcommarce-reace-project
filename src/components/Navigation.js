@@ -11,7 +11,7 @@ const Navigation = () => {
 
     return (
         <div>
-            <div className='max-w-[1200px] m-auto flex p-2 relative  items-center justify-between'>
+            <div className='max-w-[1200px] m-auto flex py-2 relative  items-center justify-between'>
                 <img className='w-[150px]' src={Logo} alt="" />
                 <div className={`flex justify-center items-center ${profile ? 'relative right-[-1000px] duration-300' : ''}`}>
                     <NavLink className='px-4 font-bold hover:text-[orange] duration-300' to='/'>Home</NavLink>

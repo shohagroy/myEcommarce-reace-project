@@ -8,6 +8,7 @@ const router = createBrowserRouter([
     {
         path: '/', element: <Header/>,
         errorElement: <ErrorPage/>,
+        loader: ()=> fetch('data/tshirts.json'),
          
         
         children:[
