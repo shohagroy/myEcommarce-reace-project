@@ -1,34 +1,47 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import produt from '../assests/product-08.png'
+import Button from './Button';
 import Card from './Card';
+import { fetchData } from './utility';
 
-const Category = () => {
+
+const Category = ({product}) => {
+
+    // fetch('https://openapi.programming-hero.com/api/phones?search=iphone')
+    // .then(res => res.json())
+    // .then(data => console.log(data))
+
+
+    const data = async (url)  =>{
+        const res = await fetch(url)
+        const data = await res.json()
+
+        console.log(data)
+        return data
+    }
+    
 
     const tShirts = useLoaderData()
 
-    console.log(tShirts)
+    const mobileData = data('https://openapi.programming-hero.com/api/phones?search=iphone');
+
+    console.log(mobileData)
+
     return (
-        <div className='max-w-[1200px] m-auto '>
-            <h3 className='text-2xl font-bold'>T-Shirt</h3>
+        <div className='max-w-[1200px] m-auto p-2 '>
+            <h3 className='text-2xl font-bold'>{product}</h3>
 
             
-            <div className='py-2 grid grid-cols-4 text-center'>
+            <div className='py-2 grid md:grid-cols-4 sm:grid-cols-2  '>
 
                 {
-                    tShirts.map(tShirt => <Card key={tShirt._id} tShirt={tShirt} />)
+                    tShirts.slice(0, 4).map(tShirt => <Card key={tShirt._id} tShirt={tShirt} />)
                 }
-                {/* <div className='w-[300px] m-2'>
-                    <img src={produt} alt="Product" />
-                    <p className='py-1 text-xl'>Reatting: * * * * *</p>
-                    <h3>Name : shohag roy kjasdhfha</h3>
-                    <h1 className='text-3xl font-bold py-1'>Prie: $990</h1>
-                </div>
-
-                <div></div>
-                <div></div> */}
 
             </div>
+                <Button/>
+
+                
         </div>
     );
 };

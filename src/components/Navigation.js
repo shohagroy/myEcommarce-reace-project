@@ -6,7 +6,6 @@ const Navigation = () => {
 
     const [profile, setProfile] = useState(false);
 
-    console.log(profile)
 
 
     return (

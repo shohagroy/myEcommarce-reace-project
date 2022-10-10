@@ -14,7 +14,8 @@ const ExploreProduct = () => {
                     </svg>
                     </span>
                 </h3>
-                <Category/>
+                <Category product='T-Shirt'/>
+                <Category product='Mobile'/>
             </div>
            
         </div>
